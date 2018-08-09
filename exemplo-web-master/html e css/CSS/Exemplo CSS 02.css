@@ -1,0 +1,38 @@
+body{
+    margin: 0px;
+    background-color: burlywood;
+}
+
+a {
+    background-color: dodgerblue;
+    display:block;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    
+    border-style: solid;
+    border-width: 1px;
+    border-top-color: blue;
+    border-left-color: fuchsia;
+    border-right-color: lemonchiffon;
+    border-right-color: peru;
+}
+/*  Hoover serve para quando receber focus*/
+/* Hoover: */
+a:hoover{
+    opacity: 0.7;
+    border-style: solid;
+    border-width: : 1px;
+    border-color: red;
+}
+
+/* Active serve para quando realizar está ativo*/
+a:active{
+    background-color:black;
+    color:white;
+}

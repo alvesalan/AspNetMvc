@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+
+
+
+<div class="bg-warning">
+
+
+
+
+<div>
+    <h2>Cadastro de Recrutadora</h2>
+</div>
+
+
+<div">
+    <div class="col-md-6 offset-3 bg-success">
+        <form action="/Recrutadora/Update" method="post">
+            <input type="hidden" name="recrutadora.Id" value="@ViewBag.Recrutadora.Id" />
+
+            <div class="form-group">
+                <label for="campo-nome">Nome</label>
+                <input type="text" class="form-control" name="Recrutadora.Nome" id="campo-nome" value=@ViewBag.Recrutadora.Nome />
+            </div>
+
+            <div class="form-group">
+                <label for="campo-cpf">CPF</label>
+                <input type="text" class="form-control" name="Recrutadora.CPF" id="campo-cpf" value="@ViewBag.Recrutadora.CPF" />
+            </div>
+
+            <div class="form-group">
+                <label for="campo-salario">Salário</label>
+                <input type="text" class="form-control" name="Recrutadora.Salario" id="campo-salario" value="@ViewBag.Recrutadora.Salario" />
+            </div>
+
+            <div>
+                <label for="campo-tempo-empresa">Tempo de empresa</label>
+                <select id="campo-tempo-empresa" name="Recrutadora.TempoEmpresa">
+                    @for (int i = 0; i < 7; i++)
+                    {
+                        if (i == @ViewBag.Recrutadora.TempoEmpresa)
+                        {
+                            <option value="@i" selected="selected">@i anos</option>
+                        }
+                        else
+                        {
+                            <option value="@i">@i anos</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div>
+                <input type="reset" value="Limpar" />
+                <input type="submit" value="Cadastrar" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

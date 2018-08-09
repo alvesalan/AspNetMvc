@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div cl>
+    <div class="container border">
+        <form action="/Recrutadora/Store" method="post" method="post" onsubmit="return false; validarFormulario()">
+            <div class="form-group">
+                <label for="campo-nome">Nome</label><span class="text-danger">*</span>
+                <input type="text" class="form-control" name="Recrutadora.Nome" id="campo-nome" />
+                @Html.ValidationMessage("Recrutadora.Nome", new {@class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label for="campo-cpf">CPF</label>
+                <input type="text" class="form-control" name="Recrutadora.CPF" id="campo-cpf" />
+                @Html.ValidationMessage("Recrutadora.CPF", new {@class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label for="campo-salario">Salário</label>
+                <input type="number" class="form-control" name="Recrutadora.Salario" id="campo-salario" />
+                @Html.ValidationMessage("Recrutadora.Salario", new {@class = "text-danger" })
+            </div>
+            <div>
+                <label for="campo-tempo-empresa">Tempo de empresa</label>
+                <select id="campo-tempo-empresa" name="Recrutadora.TempoEmpresa" class="custom-select">
+                    <option value="0">Nunca trabalhou na empresa</option>
+                    <option value="1">1 ano de empresa</option>
+                    <option value="2">2 anos de empresa</option>
+                    <option value="3">3 anos de empresa</option>
+                    <option value="4">4 anos de empresa</option>
+                    <option value="5">5 anos de empresa</option>
+                    <option value="5">6 anos de empresa</option>
+                </select>
+                @Html.ValidationMessage("Rectutadora.Tempo-Empresa", new {@class = "text-danger" })
+            </div>
+            <div>
+                <input type="reset" value="Limpar" class="btn btn-success" />
+
+                <div class="row">
+                    <div class="col-12  offset-5">
+                        <button type="submit" class="btn btn-success">
+                            SALVAR
+                            <i class="fa fa-save"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>

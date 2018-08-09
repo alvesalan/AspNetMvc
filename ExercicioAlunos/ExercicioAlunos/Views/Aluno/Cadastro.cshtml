@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<!DOCTYPE html>
+
+<body>
+    <div class="text-center text-white">
+        <h1>CADASTRO DE NOTAS DE ALUNOS</h1>
+    </div>
+
+    <div class="col-12 pt-5">
+
+        <div class="border text-white col-8 offset-2">
+
+            <form action="/Aluno/Store" method="post" onsubmit="validarFormulario();">
+
+
+                <div class="form-group pt-4 text-center" id="div-campo-nome">
+                    <label for="campo-nome">NOME
+                    <span class="text-danger font-weight-bold">*</span></label>
+                    <input type="text" id="campo-nome" name="Aluno.Nome" required="required" onfocusout="validarCampoNome()" value="@ViewBag.Aluno.Nome">
+                    @Html.ValidationMessage("Aluno.Nome", new { @class = "text-danger" })
+                </div>
+
+
+
+                <div class="form-group text-center" id="campo-matricula">
+                    <label for="campo-matricula">MATRICULA<span class="text-danger font-weight-bold">*</span></label>
+                    <input type="text" id="campo-matricula" name="Aluno.Matricula" required="required" ">
+                    @Html.ValidationMessage("Aluno.Matricula", new { @class = "text-danger" })
+                </div>
+
+
+
+                <div class="form-group text-center" id="campo-nota1">
+                    <label for="campo-nota1">NOTA 1<span class="text-danger font-weight-bold">*</span></label>
+                    <input type="text" id="campo-nota1" name="Aluno.Nota1" required="required">
+                    @Html.ValidationMessage("Aluno.Nota1", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="form-group text-center" id="campo-nota2">
+                    <label for="campo-nota2">NOTA 2<span class="text-danger font-weight-bold">*</span></label>
+                    <input type="text" id="campo-nota2" name="Aluno.Nota2" required="required">
+                    @Html.ValidationMessage("Aluno.Nota2", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group text-center" id="campo-nota3">
+                    <label for="campo-nota3">NOTA 3<span class="text-danger font-weight-bold">*</span></label>
+                    <input type="text" id="campo-nota3" name="Aluno.Nota3" required="required">
+                    @Html.ValidationMessage("Aluno.Nota3", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group text-center" id="campo-frequencia">
+                    <label for="campo-frequencia">Frequencia<span class="text-danger font-weight-bold">*</span></label>
+                    <input type="text" id="campo-frequencia" name="Aluno.Frequencia" required="required">
+                    @Html.ValidationMessage("Aluno.Frequencia", new { @class = "text-danger" })
+                </div>
+
+
+
+                <div class="offset-4">
+                    <button class="btn btn-success" type="submit">
+                        CADASTAR
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>

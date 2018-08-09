@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+<!DOCTYPE html>
+@Html.ActionLink("Nova recrutadora", "Cadastro", "Recrutadora", new { @class = "btn btn-primary float right mr-2" })
+
+<h1>LISTA DE RECLUTADORAS</h1>
+
+<div class="col-12 bg-danger">
+    <div class="row">
+        <div class="col-md-1">
+            <button>CADASTAR</button>
+        </div>
+
+        <div class="col-md-3">
+            <button>EDITAR</button>
+        </div>
+
+        <div class="col-md-5">
+            <button>HOME</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="mf-3 ml-3">
+    <table class="table table-stripped table-hover">
+        <thead>
+            <tr class="bg-secondary text-white">
+                <th>Código</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ExemploMVC02.Models.Recrutadora recrutadora in @ViewBag.Recrutadoras)
+            {
+                <tr>
+                    <td>@recrutadora.Id</td>
+                    <td>@recrutadora.Nome</td>
+                    <td>@recrutadora.CPF</td>
+                    <td>
+                        <a href="/Recrutadora/Editar?id=@recrutadora.Id">
+                            <i class="fa fa-pen-alt"></i>
+                            Editar
+                        </a>
+                        <a href="/Recrutadora/Excluir?id=@recrutadora.Id">Excluir</a>
+                        <i class="fa fa-trash"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot class="bg-secondary text-white">
+        <th>Código</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>AÇÃO</th>
+        </tfoot>
+    </table>
+
+</div>
