@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+
+<body>
+    <div> 
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CLIENTE</th>
+                    <th>MODELO</th>
+                    <th>COR</th>
+                    <th>COLABORADOR RESPONSAVEL</th>
+                    <th>STATUS</th>
+                    <th>DATA DO ORÇAMENTO</th>
+                    <th>VALOR ORÇAMENTO</th>
+                    <th>VALOR SERVICO</th>
+                    <th>VALOR DESCONTO</th>
+                    <th>VALOR TOTAL</th>
+                    <th>DATA DA FINALIZACAO DO SERVICO</th>
+
+                </tr>
+            </thead>
+
+
+
+            <tbody>
+                @foreach (ExercicioMecanica.Models.Servico Servico in @ViewBag.Servico)
+                {
+                    <tr>
+                        <td>@Servico.Id</td>
+                        <td>@Servico.Cliente</td>
+                        <td>@Servico.Modelo</td>
+                        <td>@Servico.Cor</td>
+                        <td>@Servico.ColaboradorResponsavel</td>
+                        <td>@Servico.Status</td>
+                        <td>@Servico.DataOrcamento</td>
+                        <td>@Servico.ValorOrcamento</td>
+                        <td>@Servico.ValorServico</td>
+                        <td>@Servico.ValorDesconto</td>
+                        <td>@Servico.ValorTotal</td>
+                        <td>@Servico.FinalizacaoServico</td>
+
+
+                    </tr>
+                }
+                
+            </tbody>
+
+
+
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>CLIENTE</th>
+                </tr>
+            </tfoot>
+        </table>
+
+
+
+
+
+    </div>
+</body>
